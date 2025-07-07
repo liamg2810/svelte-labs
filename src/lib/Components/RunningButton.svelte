@@ -31,7 +31,7 @@
 
 	function onClick() {
 		alert("Impossible...");
-		window.close();
+		window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 	}
 
 	onMount(() => {
@@ -48,6 +48,7 @@
 
 <button
 	onmouseenter={handleOnEnter}
+	tabindex="-1"
 	class="absolute bg-blue-500 border border-blue-800 rounded-lg p-2 cursor-pointer"
 	style={`transform: translate(${x}px, ${y}px);`}
 	onclick={onClick}

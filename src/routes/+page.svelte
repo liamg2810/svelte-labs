@@ -4,6 +4,7 @@
 	import Eye from "$lib/Components/Eye.svelte";
 	import Mood from "$lib/Components/Mood.svelte";
 	import NothingButton from "$lib/Components/NothingButton.svelte";
+	import QuantumCheck from "$lib/Components/QuantumCheck.svelte";
 	import RunningButton from "$lib/Components/RunningButton.svelte";
 </script>
 
@@ -22,3 +23,4 @@
 <div class="absolute ml-32 m-5">
 	<Eye />
 </div>
+<QuantumCheck />

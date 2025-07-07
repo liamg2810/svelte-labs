@@ -6,10 +6,12 @@
 
 	let angle = $state(0);
 
+	let disabled = $state(false);
+
 	let eye: HTMLDivElement | null = $state(null);
 
 	function handleMouseMove(event: MouseEvent) {
-		if (!eye) return;
+		if (!eye || disabled) return;
 
 		mouseX = event.clientX;
 		mouseY = event.clientY;
@@ -27,6 +29,18 @@
 		}
 	}
 
+	function PokeEye() {
+		if (disabled) return;
+
+		disabled = true;
+
+		angle = 90;
+
+		setTimeout(() => {
+			disabled = false;
+		}, 3000);
+	}
+
 	onMount(() => {
 		window.addEventListener("mousemove", handleMouseMove);
 
@@ -36,11 +50,16 @@
 	});
 </script>
 
-<div class="relative rounded-full border border-neutral-800 aspect-square w-12">
+<div
+	onmouseenter={PokeEye}
+	role="button"
+	tabindex="0"
+	class={`relative rounded-full border border-neutral-800 ${disabled ? "bg-red-300 h-3 mt-3 overflow-y-hidden" : "h-12"} w-12`}
+>
 	<!-- Actual eye pupil -->
 	<div
 		bind:this={eye}
-		class="absolute left-1/2 top-1/2 w-full h-6 after:rounded-full after:bg-black after:absolute after:aspect-square after:h-6 after:right-1 after:translate-x-1/8"
+		class={`absolute left-1/2 top-1/2 w-full h-6 after:rounded-full after:bg-black after:absolute after:h-6 after:w-6 after:right-1 after:translate-x-1/8`}
 		style="transform: translate(-50%, -50%) rotate({angle}deg);"
 	></div>
 </div>

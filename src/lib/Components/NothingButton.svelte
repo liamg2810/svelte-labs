@@ -6,7 +6,8 @@
 
 		if (clicks === 30) {
 			alert("I said stop clicking! Now you die.");
-			window.close();
+			window.location.href =
+				"https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 		} else if (clicks === 20) {
 			alert("If you wont heed my warning, I will have to take action.");
 		} else if (clicks === 10) {
