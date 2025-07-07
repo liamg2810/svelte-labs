@@ -16,12 +16,14 @@
 	}
 </script>
 
-<label class="flex items-center">
-	<input
-		type="checkbox"
-		bind:checked
-		onchange={handleCheck}
-		class="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-	/>
-	<span class="ml-2 text-gray-700">Check me!</span>
-</label>
+<div class="absolute m-24">
+	<label class="flex items-center">
+		<input
+			type="checkbox"
+			bind:checked
+			onchange={handleCheck}
+			class="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+		/>
+		<span class="ml-2 text-gray-700">Check me!</span>
+	</label>
+</div>
