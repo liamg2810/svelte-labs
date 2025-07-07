@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	import Checkbox from "$lib/Components/Checkbox.svelte";
+	import RunningButton from "$lib/Components/RunningButton.svelte";
+</script>
+
+<RunningButton />
+<Checkbox />
